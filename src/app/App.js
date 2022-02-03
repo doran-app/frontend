@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
+import Rooms from "../feature/Rooms/Rooms";
 import GlobalStyle from "../common/components/GlobalStyle";
 import Auth from "../feature/auth/Auth";
 
@@ -29,7 +30,7 @@ function App() {
           <Auth />
         </Route>
         <Route path="/" exact>
-          <h1>방리스트</h1>
+          <Rooms />
         </Route>
         <Route path="/rooms">
           <h1>노인정 방</h1>
