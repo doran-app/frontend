@@ -6,8 +6,8 @@ const Section = styled.section`
   padding: 20px 0;
   background: linear-gradient(
     90deg,
-    var(scarlet-color) 0%,
-    var(orange-color) 100%
+    var(--scarlet-color) 0%,
+    var(--orange-color) 100%
   );
 `;
 
