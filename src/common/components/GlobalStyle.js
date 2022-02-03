@@ -2,7 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --primary-color: #fec85b;
+    scarlet-color: #FD8C61;
+    orange-color: #FDA560;
+    --white-color: #FFFFFF;
+    --black-color: #1A1A1A;
+    --dark-gray-color: #ECEDF2;
+    --gray-color: #F6F8F9;
+    --dark-orange-color: #FC903D;
   }
   
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');

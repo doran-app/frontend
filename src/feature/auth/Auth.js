@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import GetUser from "./GetUser";
 
 const Section = styled.section`
   padding: 20px 0;
-  background: var(--primary-color);
-  /* background: linear-gradient(90deg, #fd8c61 0%, #fda560 100%); */
+  background: linear-gradient(
+    90deg,
+    var(scarlet-color) 0%,
+    var(orange-color) 100%
+  );
 `;
 
 const Article = styled.article`
@@ -36,7 +40,7 @@ const Button = styled.button`
 `;
 
 const Auth = () => {
-  const [loginResult, setLoginResult] = useState(false);
+  // const [loginResult, setLoginResult] = useState(false);
   const scope =
     "profile_nickname, profile_image, account_email, gender, age_range";
 
@@ -46,10 +50,27 @@ const Auth = () => {
       success: async function (response) {
         window.Kakao.Auth.setAccessToken(response.access_token);
         console.log(`is set?: ${window.Kakao.Auth.getAccessToken()}`);
-        setLoginResult(true);
+        // setLoginResult(true);
+        GetUser();
       },
       fail: function (error) {
         console.log(error);
+      },
+    });
+  };
+
+  const handleLogout = () => {
+    if (!window.Kakao.Auth.getAccessToken()) {
+      console.log("Not logged in.");
+      return;
+    }
+    window.Kakao.API.request({
+      url: "/v1/user/unlink",
+      success: function (response) {
+        console.log("연결끊기 성공결과", response);
+      },
+      fail: function (error) {
+        console.log("error", error);
       },
     });
   };
@@ -60,16 +81,6 @@ const Auth = () => {
     window.Kakao.init(jsKey);
     console.log("Kakao.isInitialized", window.Kakao.isInitialized());
   }
-
-  window.Kakao.API.request({
-    url: "/v2/user/me",
-    success: async function (response) {
-      console.log("response", response);
-    },
-    fail: function (error) {
-      console.log(error);
-    },
-  });
 
   return (
     <div>
@@ -88,7 +99,8 @@ const Auth = () => {
           <Button onClick={handleLogin}>
             <img src="/kakao_login_large_narrow.png" alt="kakao login image" />
           </Button>
-          <span>{loginResult ? "로그인된다" : " not yet"}</span>
+          <Button onClick={handleLogout}>logout</Button>
+          {/* <span>{loginResult ? "로그인 완료" : " not yet"}</span> */}
         </Article>
       </Section>
     </div>
