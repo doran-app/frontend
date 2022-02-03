@@ -10,7 +10,6 @@ const Rooms = () => {
     height: 100vh;
     background-color: #f6f8f9;
   `;
-
   const MainBody = styled.div`
     display: flex;
     justify-content: space-around;
