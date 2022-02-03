@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    scarlet-color: #FD8C61;
-    orange-color: #FDA560;
+    --scarlet-color: #FD8C61;
+    --orange-color: #FDA560;
     --white-color: #FFFFFF;
     --black-color: #1A1A1A;
     --dark-gray-color: #ECEDF2;
