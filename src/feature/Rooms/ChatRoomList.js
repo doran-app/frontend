@@ -1,12 +1,5 @@
 import React from "react";
-
 import styled from "styled-components";
-import card1 from "../../assets/cards/card1.png";
-import card2 from "../../assets/cards/card2.png";
-import card3 from "../../assets/cards/card3.png";
-import card4 from "../../assets/cards/card4.png";
-import card5 from "../../assets/cards/card5.png";
-import card6 from "../../assets/cards/card6.png";
 
 const ChatRoomList = () => {
   const ChatRoomContainer = styled.div`
@@ -15,10 +8,6 @@ const ChatRoomList = () => {
     grid-template-rows: repeat(2, minmax(100px, auto));
     gap: 10px;
     width: 90%;
-
-    img {
-      width: 100%;
-    }
   `;
 
   const ChatRoom = styled.div`
@@ -34,15 +23,15 @@ const ChatRoomList = () => {
 
   const TextContent = styled.div`
     padding: 15px;
+
     ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, minmax(auto));
+      grid-template-rows: repeat(2, minmax(25px, auto));
       gap: 10px;
     }
+
     li {
-      display: grid;
-      gap: 10px;
       width: 90%;
       padding: 3px;
       background-color: #fd8c61;
@@ -55,11 +44,12 @@ const ChatRoomList = () => {
     color: #fd8c61;
     font-weight: bold;
   `;
+
   return (
     <>
       <ChatRoomContainer>
         <ChatRoom>
-          <img src={card1} />
+          <img src="/assets/cards/card1.png" alt="image" />
           <TextContent>
             <RoomNumber>01</RoomNumber>
             <h1>김필순님의 방</h1>
@@ -69,7 +59,7 @@ const ChatRoomList = () => {
           </TextContent>
         </ChatRoom>
         <ChatRoom>
-          <img src={card2} />
+          <img src="/assets/cards/card2.png" />
           <TextContent>
             <RoomNumber>02</RoomNumber>
             <h1>김순이님의 방</h1>
@@ -80,13 +70,11 @@ const ChatRoomList = () => {
           </TextContent>
         </ChatRoom>
         <ChatRoom>
-          <img src={card3} />
+          <img src="/assets/cards/card3.png" />
           <TextContent>
             <RoomNumber>03</RoomNumber>
             <h1>이영자님의 방</h1>
             <ul>
-              <li>이영자</li>
-              <li>이영자</li>
               <li>이영자</li>
               <li>이영자</li>
             </ul>
@@ -94,7 +82,7 @@ const ChatRoomList = () => {
         </ChatRoom>
 
         <ChatRoom>
-          <img src={card4} />
+          <img src="/assets/cards/card4.png" />
           <TextContent>
             <RoomNumber>04</RoomNumber>
             <h1>진국님의 방</h1>
@@ -104,7 +92,7 @@ const ChatRoomList = () => {
           </TextContent>
         </ChatRoom>
         <ChatRoom>
-          <img src={card5} />
+          <img src="/assets/cards/card5.png" />
           <TextContent>
             <RoomNumber>05</RoomNumber>
             <h1>박철수님의 방</h1>
@@ -116,7 +104,7 @@ const ChatRoomList = () => {
           </TextContent>
         </ChatRoom>
         <ChatRoom>
-          <img src={card6} />
+          <img src="/assets/cards/card6.png" />
           <TextContent>
             <RoomNumber>06</RoomNumber>
             <h1>박철수님의 방</h1>
