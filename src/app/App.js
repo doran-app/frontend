@@ -1,10 +1,13 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import Rooms from "../feature/Rooms/Rooms";
+import GlobalStyle from "../common/components/GlobalStyle";
+import Auth from "../feature/auth/Auth";
 
 function App() {
   return (
     <>
+      <GlobalStyle />
       <ul>
         <li>
           <Link to="/login">1 . 로그인화면으로</Link>
@@ -24,7 +27,7 @@ function App() {
       </ul>
       <Switch>
         <Route path="/login">
-          <h1>로그인</h1>
+          <Auth />
         </Route>
         <Route path="/" exact>
           <Rooms />
