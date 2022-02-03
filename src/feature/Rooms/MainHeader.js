@@ -2,19 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const MainHeader = () => {
-  const HeaderContainer = styled.div`
-    display: flex;
-    justify-content: space-around;
-  `;
-
-  const RoomInfo = styled.div`
-    display: flex;
-
-    h1 {
-      margin: 0 10px;
-    }
-  `;
-
   return (
     <HeaderContainer>
       <button>방 만들기</button>
@@ -26,5 +13,18 @@ const MainHeader = () => {
     </HeaderContainer>
   );
 };
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const RoomInfo = styled.div`
+  display: flex;
+
+  h1 {
+    margin: 0 10px;
+  }
+`;
 
 export default MainHeader;
