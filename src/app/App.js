@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
+import Rooms from "../feature/Rooms/Rooms";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <h1>로그인</h1>
         </Route>
         <Route path="/" exact>
-          <h1>방리스트</h1>
+          <Rooms />
         </Route>
         <Route path="/rooms">
           <h1>노인정 방</h1>
