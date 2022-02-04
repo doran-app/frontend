@@ -15,7 +15,7 @@ const MainHeader = () => {
   );
 };
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-around;
   padding: 30px 0;

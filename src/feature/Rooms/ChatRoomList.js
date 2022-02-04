@@ -16,7 +16,7 @@ const ChatRoomList = () => {
   );
 };
 
-const ChatRoomContainer = styled.div`
+const ChatRoomContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, minmax(100px, auto));

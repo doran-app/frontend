@@ -14,30 +14,32 @@ const Button = ({ text, size }) => {
 };
 
 const Small = styled.button`
-  background: var(--dark-orange-color);
+  width: 80px;
+  background-color: var(--dark-orange-color);
+  font-size: 16px;
 `;
 
 const Medium = styled.button`
   width: 125px;
-  background: var(--dark-orange-color);
   border-radius: 20px;
+  background-color: var(--dark-orange-color);
   color: var(--white-color);
   font-size: 18px;
 `;
 
 const Large = styled.button`
   width: 150px;
-  background: var(--dark-orange-color);
   border-radius: 24px;
-  font-size: 20px;
+  background-color: var(--dark-orange-color);
   color: var(--white-color);
+  font-size: 20px;
 `;
 
 const Logout = styled.button`
   border-bottom: 2px solid var(--black-color);
+  color: var(--black-color);
   font-size: 20px;
   font-weight: bold;
-  color: var(--black-color);
 `;
 
 Button.propTypes = {
