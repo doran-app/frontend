@@ -31,7 +31,7 @@ function App() {
           <Rooms />
         </Route>
         <Route path="/rooms">
-          <h1>노인정 방</h1>
+          <h1>노인정 방 페이지</h1>
         </Route>
         <Route path="/video">
           <h1>화상채팅</h1>
