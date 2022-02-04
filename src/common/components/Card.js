@@ -5,7 +5,9 @@ const Card = () => {
   return (
     <>
       <ChatRoom>
-        <img src="/assets/cards/card1.png" alt="image" />
+        <div>
+          <img src="/assets/cards/card1.png" alt="image" />
+        </div>
         <TextContent>
           <RoomNumber>01</RoomNumber>
           <h1>김필순님의 방</h1>
@@ -18,11 +20,10 @@ const Card = () => {
   );
 };
 
-const ChatRoom = styled.div`
+const ChatRoom = styled.li`
   border: 1px solid var(--dark-grey-shadow-color);
   border-radius: 15px;
   box-shadow: 1px 1px 10px 1px var(--light-grey-shadow-color);
-
   overflow: hidden;
 
   h1 {
@@ -45,8 +46,8 @@ const TextContent = styled.div`
   li {
     width: 90%;
     padding: 3px;
-    background-color: var(--orange-color);
     border-radius: 15px;
+    background-color: var(--orange-color);
     color: var(--white-color);
     text-align: center;
   }
