@@ -4,7 +4,6 @@ import styled from "styled-components";
 const MainHeader = () => {
   return (
     <HeaderContainer>
-      <button>방 만들기</button>
       <RoomInfo>
         <button>새로고침</button>
         <h1>강남구 대치노인정</h1>

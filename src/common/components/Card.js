@@ -19,37 +19,41 @@ const Card = () => {
 };
 
 const ChatRoom = styled.div`
-  border: 1px solid #333;
+  border: 1px solid var(--dark-grey-shadow-color);
   border-radius: 15px;
+  box-shadow: 1px 1px 10px 1px var(--light-grey-shadow-color);
+
   overflow: hidden;
 
   h1 {
     margin: 3px 0 15px 0;
-    border-bottom: 1px solid var(--dark-orange-color);
+    border-bottom: 1px solid var(--dark-grey-shadow-color);
   }
 `;
 
 const TextContent = styled.div`
   padding: 15px;
+  background: var(--white-color);
 
   ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, minmax(25px, auto));
+    grid-template-rows: repeat(2, minmax(28px, auto));
     gap: 10px;
   }
 
   li {
     width: 90%;
     padding: 3px;
-    background-color: #fd8c61;
+    background-color: var(--orange-color);
     border-radius: 15px;
+    color: var(--white-color);
     text-align: center;
   }
 `;
 
 const RoomNumber = styled.span`
-  color: #fd8c61;
+  color: var(--scarlet-color);
   font-weight: bold;
 `;
 

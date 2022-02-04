@@ -8,9 +8,11 @@ const GlobalStyle = createGlobalStyle`
     --black-color: #1A1A1A;
     --dark-gray-color: #ECEDF2;
     --gray-color: #F6F8F9;
+    --dark-grey-shadow-color: #BCBCBC;
+    --light-grey-shadow-color: #0000001a;
     --dark-orange-color: #FC903D;
   }
-  
+
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
   * {
