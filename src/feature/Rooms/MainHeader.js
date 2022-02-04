@@ -10,7 +10,7 @@ const MainHeader = () => {
         <Button text="새로고침" size="small" />
         <h1>강남구 대치노인정</h1>
       </RoomInfo>
-      <Button text="로그아웃" />
+      <Button text="로그아웃" size="large" login={true} />
     </HeaderContainer>
   );
 };
