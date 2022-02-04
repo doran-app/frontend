@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import GetUser from "../../common/utils/getUser";
-
+import GetUser from "../../common/utils/auth/getUser";
+import Logout from "../../common/utils/auth/Logout";
 const Auth = () => {
   const scope =
     "profile_nickname, profile_image, account_email, gender, age_range";
@@ -20,22 +20,6 @@ const Auth = () => {
     });
   };
 
-  const handleLogout = () => {
-    if (!window.Kakao.Auth.getAccessToken()) {
-      console.log("Not logged in.");
-      return;
-    }
-    window.Kakao.API.request({
-      url: "/v1/user/unlink",
-      success: function (response) {
-        console.log("연결끊기 성공결과", response);
-      },
-      fail: function (error) {
-        console.log("error", error);
-      },
-    });
-  };
-
   const jsKey = "6fe0be1f6b114e35d999d9c9ba281084";
 
   if (!window.Kakao.isInitialized()) {
@@ -44,7 +28,7 @@ const Auth = () => {
   }
 
   return (
-    <div>
+    <>
       <Section>
         <Article>
           <Title>
@@ -60,11 +44,10 @@ const Auth = () => {
           <Button onClick={handleLogin}>
             <img src="/kakao_login_large_narrow.png" alt="kakao login image" />
           </Button>
-          <Button onClick={handleLogout}>logout</Button>
-          {/* <span>{loginResult ? "로그인 완료" : " not yet"}</span> */}
+          <Logout />
         </Article>
       </Section>
-    </div>
+    </>
   );
 };
 
@@ -75,6 +58,7 @@ const Section = styled.section`
     var(--scarlet-color) 0%,
     var(--orange-color) 100%
   );
+  background-size: auto 100%;
 `;
 
 const Article = styled.article`
