@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import GetUser from "../../common/utils/GetUser";
+import GetUser from "../../common/utils/getUser";
 
 const Auth = () => {
   const scope =
