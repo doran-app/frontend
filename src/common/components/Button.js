@@ -2,13 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const Button = ({ text, size }) => {
+const Button = ({ text, size, login }) => {
   return (
     <>
       {size === "small" && <Small>{text}</Small>}
       {size === "medium" && <Medium>{text}</Medium>}
-      {size === "large" && <Large>{text}</Large>}
-      {text === "로그아웃" && <Logout>{text}</Logout>}
+      {size === "large" && <Large login={login}>{text}</Large>}
     </>
   );
 };
@@ -33,18 +32,24 @@ const Large = styled.button`
   background-color: var(--dark-orange-color);
   color: var(--white-color);
   font-size: 20px;
+
+  ${({ login }) => {
+    return login ? `color: red` : null;
+  }}
 `;
 
-const Logout = styled.button`
-  border-bottom: 2px solid var(--black-color);
-  color: var(--black-color);
-  font-size: 20px;
-  font-weight: bold;
-`;
+// const Logout = styled.button`
+//   border-bottom: 2px solid var(--black-color);
+//   color: var(--black-color);
+//   font-size: 20px;
+//   font-weight: bold;
+// `;
 
 Button.propTypes = {
   text: PropTypes.string,
   size: PropTypes.string,
+  img: PropTypes.string,
+  login: PropTypes.string,
 };
 
 export default Button;

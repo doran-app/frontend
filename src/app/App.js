@@ -1,7 +1,10 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import Rooms from "../feature/Rooms/Rooms";
+<<<<<<< Updated upstream
 import Login from "../feature/Auth/Login";
+=======
+>>>>>>> Stashed changes
 
 function App() {
   return (
@@ -24,9 +27,13 @@ function App() {
         </li>
       </ul>
       <Switch>
+<<<<<<< Updated upstream
         <Route path="/login">
           <Login />
         </Route>
+=======
+        <Route path="/login"></Route>
+>>>>>>> Stashed changes
         <Route path="/" exact>
           <Rooms />
         </Route>
