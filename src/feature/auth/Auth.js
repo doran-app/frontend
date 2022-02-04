@@ -1,46 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import GetUser from "./GetUser";
-
-const Section = styled.section`
-  padding: 20px 0;
-  background: linear-gradient(
-    90deg,
-    var(--scarlet-color) 0%,
-    var(--orange-color) 100%
-  );
-`;
-
-const Article = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  background-color: #fff;
-`;
-
-const Title = styled.div`
-  padding: 10px;
-`;
-
-const Font = styled.div`
-  font-size: $sizeXXS;
-`;
-
-const LogoImg = styled.span`
-  display: inline-block;
-  width: 30px;
-`;
-
-const Button = styled.button`
-  width: 150px;
-`;
+import GetUser from "../../common/utils/GetUser";
 
 const Auth = () => {
-  // const [loginResult, setLoginResult] = useState(false);
   const scope =
     "profile_nickname, profile_image, account_email, gender, age_range";
 
@@ -50,7 +12,6 @@ const Auth = () => {
       success: async function (response) {
         window.Kakao.Auth.setAccessToken(response.access_token);
         console.log(`is set?: ${window.Kakao.Auth.getAccessToken()}`);
-        // setLoginResult(true);
         GetUser();
       },
       fail: function (error) {
@@ -106,5 +67,42 @@ const Auth = () => {
     </div>
   );
 };
+
+const Section = styled.section`
+  padding: 20px 0;
+  background: linear-gradient(
+    90deg,
+    var(--scarlet-color) 0%,
+    var(--orange-color) 100%
+  );
+`;
+
+const Article = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+`;
+
+const Title = styled.div`
+  padding: 10px;
+`;
+
+const Font = styled.div`
+  font-size: $sizeXXS;
+`;
+
+const LogoImg = styled.span`
+  display: inline-block;
+  width: 30px;
+`;
+
+const Button = styled.button`
+  width: 150px;
+`;
 
 export default Auth;
