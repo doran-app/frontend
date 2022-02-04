@@ -1,4 +1,4 @@
-import GetUserLocation from "./GetUserLocation";
+import GetUserLocation from "./getUserLocation";
 
 const GetUser = async () => {
   await window.Kakao.API.request({
