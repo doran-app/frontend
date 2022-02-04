@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router";
 
-const Logout = () => {
+const LogoutButton = () => {
   const history = useHistory();
 
   const handleLogout = () => {
@@ -29,4 +29,4 @@ const Button = styled.button`
   width: 150px;
 `;
 
-export default Logout;
+export default LogoutButton;
