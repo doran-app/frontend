@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import Rooms from "../feature/Rooms/Rooms";
-import Auth from "../feature/Auth/Auth";
+import Login from "../feature/Auth/Login";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
       </ul>
       <Switch>
         <Route path="/login">
-          <Auth />
+          <Login />
         </Route>
         <Route path="/" exact>
           <Rooms />

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import GetUser from "../../common/utils/auth/getUser";
-import Logout from "../../common/utils/auth/Logout";
+import kakaoApi from "../../modules/api/kakaoApi";
+
 const Auth = () => {
   const scope =
     "profile_nickname, profile_image, account_email, gender, age_range";
@@ -12,7 +12,7 @@ const Auth = () => {
       success: async function (response) {
         window.Kakao.Auth.setAccessToken(response.access_token);
         console.log(`is set?: ${window.Kakao.Auth.getAccessToken()}`);
-        GetUser();
+        kakaoApi.getUser();
       },
       fail: function (error) {
         console.log(error);
@@ -44,7 +44,6 @@ const Auth = () => {
           <Button onClick={handleLogin}>
             <img src="/kakao_login_large_narrow.png" alt="kakao login image" />
           </Button>
-          <Logout />
         </Article>
       </Section>
     </>

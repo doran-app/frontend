@@ -1,4 +1,17 @@
-const GetUserLocation = () => {
+const getUser = async () => {
+  await window.Kakao.API.request({
+    url: "/v2/user/me",
+    success: async function (response) {
+      console.log("response", response);
+      getUserLocation();
+    },
+    fail: function (error) {
+      console.log("error", error);
+    },
+  });
+};
+
+const getUserLocation = () => {
   let lat = 0;
   let lng = 0;
 
@@ -35,4 +48,6 @@ const GetUserLocation = () => {
   };
 };
 
-export default GetUserLocation;
+const kakaoApi = { getUser, getUserLocation };
+
+export default kakaoApi;
